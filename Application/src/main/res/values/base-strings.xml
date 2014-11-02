@@ -20,12 +20,12 @@
         <![CDATA[
         
             
-            This sample demonstrates how to implement a low-level NFC card reader, for reading cards
-            that do not contain NDEF or Android Beam data. This sample is designed to read the virtual
-            loyalty card implemented in the "CardEmulation" sample.\n\n
+            This prototype demonstrates the application scope, ranging from NFC scanning for checking in and
+            bluetooth monitoring for estimating distance.
 
-            In particular, this sample demonstrates how to disable Android Beam, select which AIDs the
-            reader is interested, and establish communication with the card
+            NFC -> involves exchanging data of profile information to be tracked of.
+
+            Bluetooth -> monitoring the distance between devices to estimate roughly whether the person is in the room or not
             
         
         ]]>
