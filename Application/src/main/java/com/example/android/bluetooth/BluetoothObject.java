@@ -55,6 +55,7 @@ public class BluetoothObject  {
     }
 
     public String getScanRecordString(int from, int to) {
+        if (scanRecord == null) return "?";
         byte[] hex = Arrays.copyOfRange(scanRecord, from, to);
         StringBuilder sb = new StringBuilder(hex.length * 2);
         for(byte b: hex)

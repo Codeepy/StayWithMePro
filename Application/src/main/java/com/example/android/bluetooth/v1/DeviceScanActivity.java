@@ -13,6 +13,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import com.example.android.bluetooth.BluetoothObject;
 import com.example.android.cardreader.R;
+import com.example.android.factory.WebServicePostFactory;
+import com.example.android.webservice.YoWebService;
 
 import java.util.ArrayList;
 
@@ -138,6 +140,14 @@ public class DeviceScanActivity extends ListActivity {
             viewHolder.deviceUUID.setText(device.getScanRecordString(9, 25));
             viewHolder.deviceDistance.setText(String.valueOf(device.getEstimateDistance()) + " cm");
 
+            if (device.getEstimateDistance() > 100.0){
+                YoWebService yo = new YoWebService();
+                yo.setUsername("dumbastic");
+                yo.setYo(YoWebService.YO);
+                yo.setApi_token(getResources().getString(R.string.yo_api_token));
+                WebServicePostFactory factory = new WebServicePostFactory();
+                factory.execute(yo);
+            }
             return view;
         }
 
