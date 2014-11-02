@@ -141,7 +141,8 @@ public class DeviceScanActivity extends ListActivity {
             viewHolder.deviceDistance.setText(String.valueOf(device.getEstimateDistance()) + " cm");
 
             if (device.getEstimateDistance() > 100.0 &&
-                    device.getScanRecordString(9, 25).equals("0112233445566778899aabbccddeeff0")){
+                    (device.getScanRecordString(9, 25).equals("0112233445566778899aabbccddeeff0") ||
+                    device.getAddress().equals("30:85:a9:de:36:8b"))){
                 YoWebService yo = new YoWebService();
                 yo.setUsername("dumbastic");
                 yo.setYo(YoWebService.YO);
